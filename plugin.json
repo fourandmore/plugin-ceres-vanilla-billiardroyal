@@ -8,7 +8,7 @@
     "email"             :   "steven.resch@four-and-more.net",
     "phone"             :   "*",
     "description"       :   "A Billiards theme for Ceres.",
-    "shortDescription"  :   { "de": "Ein Billiard-Theme für Ceres.", "en": "A Billiards theme for Ceres." },
+    "shortDescription"  :   { "de": "Ein Billiard Theme für Ceres.", "en": "A Billiards theme for Ceres." },
     "namespace"         :   "BilliardRoyal",
     "author"            :   "Steven Resch",
     "keywords"          :   ["plentymarkets", "plugins", "layout", "theme", "ceres"],
