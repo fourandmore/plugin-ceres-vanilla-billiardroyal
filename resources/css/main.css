@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* add custom css */
+
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.footer {
+    color: #fff;
+    background-color: #2C1111;
+    margin-top: 50px;
+}
+.footer a {
+    color: #fff;
+}
+.footer h5 {
+	font-weight: bold;
+}
+a {
+	color: #2C1111;
+}
+.footer .fa-chevron-up {
+	color: #000;
+}
+#eKomiWidget_default {
+	max-width: 130px;
+}
+#eKomiWidget_default img {
+	max-width: 130px;
+}
+.top-bar {
+    background-color: #000;
+}
+.wrapper-main .navbar {
+	background: #ffffff;
+}
+.sidebar-categories ul li.active > a {
+    background: #2C1111;
+}
