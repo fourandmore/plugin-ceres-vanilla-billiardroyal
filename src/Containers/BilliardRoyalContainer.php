@@ -1,13 +1,13 @@
 <?php
 
-namespace BilliardRoyal\Containers;
+namespace CeresVanillaBilliardRoyal\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
-class BilliardRoyalContainer
+class CeresVanillaBilliardRoyalContainer
 {
     public function call(Twig $twig):string
     {
-        return $twig->render('BilliardRoyal::Stylesheet');
+        return $twig->render('CeresVanillaBilliardRoyal::Stylesheet');
     }
 }
