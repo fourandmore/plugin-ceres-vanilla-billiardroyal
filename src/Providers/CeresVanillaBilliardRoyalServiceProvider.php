@@ -1,6 +1,6 @@
 <?php
 
-namespace BilliardRoyal\Providers;
+namespace CeresVanillaBilliardRoyal\Providers;
 
 use Ceres\Caching\NavigationCacheSettings;
 use Ceres\Caching\SideNavigationCacheSettings;
@@ -14,10 +14,10 @@ use Plenty\Plugin\ConfigRepository;
 
 
 /**
- * Class BilliardRoyalServiceProvider
- * @package BilliardRoyal\Providers
+ * Class CeresVanillaBilliardRoyalServiceProvider
+ * @package CeresVanillaBilliardRoyal\Providers
  */
-class BilliardRoyalServiceProvider extends ServiceProvider
+class CeresVanillaBilliardRoyalServiceProvider extends ServiceProvider
 {
     const PRIORITY = 0;
 
@@ -29,13 +29,13 @@ class BilliardRoyalServiceProvider extends ServiceProvider
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
 
-        $enabledOverrides = explode(", ", $config->get("BilliardRoyal.templates.override"));
+        $enabledOverrides = explode(", ", $config->get("CeresVanillaBilliardRoyal.templates.override"));
 
         // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
         {
-            pluginApp(Container::class)->register('BilliardRoyal::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
-            pluginApp(Container::class)->register('BilliardRoyal::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
+            pluginApp(Container::class)->register('CeresVanillaBilliardRoyal::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
+            pluginApp(Container::class)->register('CeresVanillaBilliardRoyal::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
 
             $partial->set('head', 'Ceres::PageDesign.Partials.Head');
             $partial->set('header', 'Ceres::PageDesign.Partials.Header.Header');
@@ -44,22 +44,22 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             if (in_array("head", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('head', 'BilliardRoyal::PageDesign.Partials.Head');
+                $partial->set('head', 'CeresVanillaBilliardRoyal::PageDesign.Partials.Head');
             }
 
             if (in_array("header", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('header', 'BilliardRoyal::PageDesign.Partials.Header.Header');
+                $partial->set('header', 'CeresVanillaBilliardRoyal::PageDesign.Partials.Header.Header');
             }
 
             if (in_array("page_design", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('page-design', 'BilliardRoyal::PageDesign.PageDesign');
+                $partial->set('page-design', 'CeresVanillaBilliardRoyal::PageDesign.PageDesign');
             }
 
             if (in_array("footer", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('footer', 'BilliardRoyal::PageDesign.Partials.Footer');
+                $partial->set('footer', 'CeresVanillaBilliardRoyal::PageDesign.Partials.Footer');
             }
 
             return false;
@@ -71,7 +71,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.home', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Homepage.Homepage');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Homepage.Homepage');
                 return false;
             }, self::PRIORITY);
         }
@@ -82,7 +82,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.category.content', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Category.Content.CategoryContent');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Category.Content.CategoryContent');
                 return false;
             }, self::PRIORITY);
         }
@@ -93,7 +93,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Category.Item.CategoryItem');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Category.Item.CategoryItem');
                 return false;
             }, self::PRIORITY);
         }
@@ -104,7 +104,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.basket', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Basket.Basket');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Basket.Basket');
                 return false;
             }, self::PRIORITY);
         }
@@ -115,7 +115,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.checkout', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Checkout.Checkout');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Checkout.Checkout');
                 return false;
             }, self::PRIORITY);
         }
@@ -126,7 +126,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.confirmation', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Checkout.OrderConfirmation');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Checkout.OrderConfirmation');
                 return false;
             }, self::PRIORITY);
         }
@@ -137,7 +137,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.login', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Customer.Login');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Customer.Login');
                 return false;
             }, self::PRIORITY);
         }
@@ -148,7 +148,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.register', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Customer.Register');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Customer.Register');
                 return false;
             }, self::PRIORITY);
         }
@@ -159,7 +159,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.item', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::Item.SingleItem');
+                $container->setTemplate('CeresVanillaBilliardRoyal::Item.SingleItem');
                 return false;
             }, self::PRIORITY);
         }
@@ -170,7 +170,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.search', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::ItemList.ItemListView');
+                $container->setTemplate('CeresVanillaBilliardRoyal::ItemList.ItemListView');
                 return false;
             }, self::PRIORITY);
         }
@@ -181,7 +181,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.my-account', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::MyAccount.MyAccount');
+                $container->setTemplate('CeresVanillaBilliardRoyal::MyAccount.MyAccount');
                 return false;
             }, self::PRIORITY);
         }
@@ -192,7 +192,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.cancellation-rights', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::StaticPages.CancellationRights');
+                $container->setTemplate('CeresVanillaBilliardRoyal::StaticPages.CancellationRights');
                 return false;
             }, self::PRIORITY);
         }
@@ -203,7 +203,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.legal-disclosure', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::StaticPages.LegalDisclosure');
+                $container->setTemplate('CeresVanillaBilliardRoyal::StaticPages.LegalDisclosure');
                 return false;
             }, self::PRIORITY);
         }
@@ -214,7 +214,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.privacy-policy', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::StaticPages.PrivacyPolicy');
+                $container->setTemplate('CeresVanillaBilliardRoyal::StaticPages.PrivacyPolicy');
                 return false;
             }, self::PRIORITY);
         }
@@ -225,7 +225,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.terms-conditions', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::StaticPages.TermsAndConditions');
+                $container->setTemplate('CeresVanillaBilliardRoyal::StaticPages.TermsAndConditions');
                 return false;
             }, self::PRIORITY);
         }
@@ -236,7 +236,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.item-not-found', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::StaticPages.ItemNotFound');
+                $container->setTemplate('CeresVanillaBilliardRoyal::StaticPages.ItemNotFound');
                 return false;
             }, self::PRIORITY);
         }
@@ -247,7 +247,7 @@ class BilliardRoyalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.page-not-found', function (TemplateContainer $container)
             {
-                $container->setTemplate('BilliardRoyal::StaticPages.PageNotFound');
+                $container->setTemplate('CeresVanillaBilliardRoyal::StaticPages.PageNotFound');
                 return false;
             }, self::PRIORITY);
         }

@@ -4,7 +4,7 @@ namespace CeresVanillaBilliardRoyal\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
-class BilliardRoyalContainer
+class CeresVanillaBilliardRoyalContainer
 {
     public function call(Twig $twig):string
     {
