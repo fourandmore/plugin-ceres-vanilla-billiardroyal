@@ -1,7 +1,7 @@
 {
     "version"           :   "2.10.0",
     "license"           :   "AGPL-3.0",
-    "name"              :   "BilliardRoyal",
+    "name"              :   "CeresVanillaBilliardRoyal",
     "marketplaceName"   :   {"de":"BilliardRoyal","en":"BilliardRoyal"},
     "pluginIcon"        :   "icon_plugin_xs.png",
     "authorIcon"        :   "icon_author_xs.png",
@@ -9,7 +9,7 @@
     "phone"             :   "*",
     "description"       :   "A Billiards theme for Ceres.",
     "shortDescription"  :   { "de": "Ein Billiard Theme für Ceres.", "en": "A Billiards theme for Ceres." },
-    "namespace"         :   "BilliardRoyal",
+    "namespace"         :   "CeresVanillaBilliardRoyal",
     "author"            :   "Steven Resch",
     "keywords"          :   ["plentymarkets", "plugins", "layout", "theme", "ceres"],
     "price"             :   0,
@@ -20,22 +20,22 @@
     "dataProviders"     :
     [
         {
-            "key"           :"BilliardRoyal\\Containers\\BilliardRoyalContainer",
+            "key"           :"CeresVanillaBilliardRoyal\\Containers\\BilliardRoyalContainer",
             "name"          :"Stylesheet",
             "description"   :"Add changes to the CSS file"
         },
         {
-            "key"           :"BilliardRoyal\\Containers\\BilliardRoyalItemListContainer1",
+            "key"           :"CeresVanillaBilliardRoyal\\Containers\\BilliardRoyalItemListContainer1",
             "name"          :"First item list",
             "description"   :"Display a configurable list of items in your online store"
         },
         {
-            "key"           :"BilliardRoyal\\Containers\\BilliardRoyalItemListContainer2",
+            "key"           :"CeresVanillaBilliardRoyal\\Containers\\BilliardRoyalItemListContainer2",
             "name"          :"Second item list",
             "description"   :"Display a configurable list of items in your online store"
         },
         {
-            "key"           :"BilliardRoyal\\Containers\\BilliardRoyalItemListContainer3",
+            "key"           :"CeresVanillaBilliardRoyal\\Containers\\BilliardRoyalItemListContainer3",
             "name"          :"Third item list",
             "description"   :"Display a configurable list of items in your online store"
         }
