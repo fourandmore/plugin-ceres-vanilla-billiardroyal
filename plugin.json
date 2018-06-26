@@ -1,8 +1,8 @@
 {
     "version"           :   "2.10.0",
     "license"           :   "AGPL-3.0",
-    "name"              :   "BilliardRoyal",
-    "marketplaceName"   :   {"de":"BilliardRoyal","en":"BilliardRoyal"},
+    "name"              :   "CeresVanillaBilliardRoyal",
+    "marketplaceName"   :   {"de":"CeresVanillaBilliardRoyal","en":"CeresVanillaBilliardRoyal"},
     "pluginIcon"        :   "icon_plugin_xs.png",
     "authorIcon"        :   "icon_author_xs.png",
     "email"             :   "steven.resch@four-and-more.net",
